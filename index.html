@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<title>Оценки дайджеста</title>
+<style>
+:root{color-scheme:light;--bg:var(--tg-theme-bg-color,#faf9f6);--ink:var(--tg-theme-text-color,#222824);--muted:var(--tg-theme-hint-color,#636a64);--accent:var(--tg-theme-button-color,#285e4a);--on-accent:var(--tg-theme-button-text-color,#ffffff);--surface:var(--tg-theme-secondary-bg-color,#eeeFEa);--link:var(--tg-theme-link-color,#285e4a);--line:color-mix(in srgb,var(--ink) 17%,transparent)}
+@media(prefers-color-scheme:dark){:root{color-scheme:dark;--bg:var(--tg-theme-bg-color,#1c211e);--ink:var(--tg-theme-text-color,#eeeee8);--muted:var(--tg-theme-hint-color,#acb4ac);--accent:var(--tg-theme-button-color,#acd7bf);--on-accent:var(--tg-theme-button-text-color,#193c2d);--surface:var(--tg-theme-secondary-bg-color,#29302b);--link:var(--tg-theme-link-color,#acd7bf)}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-wrap:anywhere}button,a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}button{font:inherit;cursor:pointer}button:disabled{cursor:default;opacity:.55}button:focus-visible,a:focus-visible{outline:3px solid var(--link);outline-offset:4px}a{color:var(--link)}[hidden]{display:none!important}.shell{max-width:680px;margin:auto;padding:calc(24px + max(env(safe-area-inset-top),var(--tg-content-safe-area-inset-top,0px))) 22px 220px}.masthead{border-bottom:1px solid var(--line);padding-bottom:22px}.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted);margin:0 0 12px}h1{font:500 34px/1.13 Georgia,"Times New Roman",serif;letter-spacing:-.025em;margin:0 0 12px}p{margin:0 0 12px}.meta,.small{font-size:13px;color:var(--muted)}.intro{margin:18px 0 0;font-size:14px}.notice{padding:14px 0;border-bottom:1px solid var(--line);font-size:14px}.notice p:last-child{margin:0}#host-note{color:var(--muted)}#storage-note{color:var(--ink)}.state{padding:28px 0}.state h2{font:500 25px/1.2 Georgia,serif;margin:0 0 10px}.secondary{min-height:44px;padding:8px 16px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}.section-title{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:28px 0 0;padding-bottom:12px;border-bottom:1px solid var(--line)}.article{padding:24px 0;border-bottom:1px solid var(--line)}.article-meta{display:flex;gap:10px;align-items:center;margin-bottom:9px;font-size:12px;font-weight:600;color:var(--muted)}.badge{color:var(--accent);background:var(--surface);padding:3px 8px;border-radius:4px;letter-spacing:.04em}h3{font:500 24px/1.25 Georgia,"Times New Roman",serif;margin:0 0 12px;letter-spacing:-.015em}.summary{font-size:15px;line-height:1.65;white-space:pre-line}.source{display:inline-flex;align-items:center;min-height:44px;max-width:100%;gap:7px;font-size:13px;text-underline-offset:4px}.rating-label{font-size:13px;margin:12px 0 8px;font-weight:600}.rating{display:grid;grid-template-columns:repeat(5,minmax(44px,1fr));gap:7px}.score{min-height:46px;border:1px solid var(--line);border-radius:7px;background:var(--bg);color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}.score[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}.scale{display:flex;justify-content:space-between;gap:12px;font-size:11px;color:var(--muted);margin-top:7px}.selection{font-size:12px;color:var(--muted);min-height:19px;margin:7px 0 0}.dock{position:fixed;bottom:0;left:0;width:100%;background:var(--bg);border-top:1px solid var(--line);padding:12px 22px calc(12px + max(env(safe-area-inset-bottom),var(--tg-content-safe-area-inset-bottom,0px)));z-index:2}.dock-inner{max-width:636px;margin:auto}.counts{display:flex;justify-content:space-between;gap:12px;font-size:13px;margin:0 0 10px;font-variant-numeric:tabular-nums}.primary{min-height:48px;width:100%;background:var(--accent);color:var(--on-accent);border:0;border-radius:9px;padding:12px 10px;font-weight:600}.footnote{font-size:12px;color:var(--muted);margin:8px 0 0;line-height:1.4}#send-status:not(:empty){font-size:13px;margin:8px 0 0}noscript{display:block;padding:24px}@media(max-width:350px){.shell{padding-left:16px;padding-right:16px}.dock{padding-left:16px;padding-right:16px}.rating{gap:4px}h1{font-size:30px}}@media(prefers-reduced-motion:no-preference){.score{transition:background-color .12s,color .12s}}
+</style>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+<!-- Operate: редакционный список для чтения и оценки, без рекламного блока. -->
+<main class="shell">
+<header class="masthead"><p class="eyebrow">Дайджест / обратная связь</p><h1>Что было интересно?</h1><p id="edition-meta" class="meta">Загружаем выпуск…</p><p class="intro">Оцените новости от 1 до 5. Можно выбрать только часть. Повторное нажатие снимает оценку.</p></header>
+<div id="host-note" class="notice" role="note" hidden></div>
+<div id="storage-note" class="notice" role="status" hidden></div>
+<section id="state" class="state" aria-live="polite"><h2 id="state-title">Загрузка</h2><p id="state-message">Получаем новости выпуска…</p><button id="retry" class="secondary" type="button" hidden>Попробовать снова</button></section>
+<div id="news" aria-busy="true"></div>
+</main>
+<footer class="dock"><div class="dock-inner"><p class="counts"><span id="count" aria-live="polite">Оценено: 0 из 0</span><span id="remaining">Без оценки: 0</span></p><button id="save" class="primary" type="button" disabled>Передать оценки в чат</button><p id="send-status" role="status" aria-live="polite"></p><p class="footnote">Откройте через кнопку клавиатуры бота. После передачи бот подтвердит получение в чате.</p></div></footer>
+<noscript>Для чтения и оценки новостей включите JavaScript.</noscript>
+<script id="digest-core">
+(function () {
+'use strict';
+const core = {
+  validEdition: value => typeof value === 'string' && /^[a-f0-9]{32}$/.test(value) && value.length === 32
+};
+core.validateData = (data, edition) => {
+  if (!core.validEdition(edition) || !data || data.edition !== edition || typeof data.date !== 'string' || !data.date.trim() || !Array.isArray(data.items)) throw new Error('Неверный формат выпуска');
+  const ids = new Set();
+  for (const item of data.items) {
+    if (!item || typeof item.id !== 'string' || !/^N[1-9][0-9]*$/.test(item.id) || ids.has(item.id) || typeof item.top !== 'boolean' || ['title','summary','category','url'].some(key => typeof item[key] !== 'string') || !item.title.trim() || !item.category.trim()) throw new Error('Неверный формат новости');
+    const url = new URL(item.url);
+    if (!['http:','https:'].includes(url.protocol) || !/^https?:\/\//i.test(item.url) || url.username || url.password) throw new Error('Небезопасная ссылка');
+    ids.add(item.id);
+  }
+  return data;
+};
+core.restoreDraft = (raw, ids) => {
+  try {
+    const value = JSON.parse(raw);
+    if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
+    return Object.fromEntries(Object.entries(value).filter(([id, score]) => ids.includes(id) && Number.isInteger(score) && score >= 1 && score <= 5));
+  } catch (_) { return {}; }
+};
+core.toggleRating = (ratings, id, score, ids) => {
+  if (!ids.includes(id) || !Number.isInteger(score) || score < 1 || score > 5) throw new Error('Недопустимая оценка');
+  const next = {...ratings};
+  if (next[id] === score) delete next[id]; else next[id] = score;
+  return next;
+};
+core.buildPayload = (edition, ratings, ids) => {
+  if (!core.validEdition(edition) || !ratings || typeof ratings !== 'object' || Array.isArray(ratings) || !Object.keys(ratings).length || Object.entries(ratings).some(([id,score]) => !ids.includes(id) || !Number.isInteger(score) || score < 1 || score > 5)) throw new Error('Проверьте оценки перед передачей');
+  const payload = {type:'digest_ratings',edition,ratings:{...ratings}};
+  if (new TextEncoder().encode(JSON.stringify(payload)).length > 4096) throw new Error('Слишком много оценок для одного сообщения Telegram');
+  return payload;
+};
+core.canSend = tg => {
+  try {
+    return Boolean(tg && typeof tg.platform === 'string' && tg.platform !== 'unknown' && tg.platform !== '' && typeof tg.version === 'string' && /^\d+\.\d+$/.test(tg.version) && typeof tg.isVersionAtLeast === 'function' && tg.isVersionAtLeast('6.1') && typeof tg.sendData === 'function' && !tg.initDataUnsafe?.query_id);
+  } catch (_) { return false; }
+};
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = core;
+  const test = require('node:test');
+  const assert = require('node:assert/strict');
+  test('Telegram: предпросмотр и inline запуск не могут отправлять', () => {
+    assert.equal(typeof core.canSend,'function');
+    const host = {platform:'android',version:'6.1',isVersionAtLeast:v=>v==='6.1',sendData:()=>{},initDataUnsafe:{}};
+    assert.equal(core.canSend(host),true);
+    for (const tg of [null,{}, {...host,platform:'unknown'}, {...host,version:'6.0',isVersionAtLeast:()=>false}, {...host,version:'bad'}, {...host,sendData:null}, {...host,initDataUnsafe:{query_id:'inline-query'}}]) assert.equal(core.canSend(tg),false);
+  });
+  test('payload: точные поля, только оценки выпуска 1–5, ограничение Telegram 4096 байт', () => {
+    assert.equal(typeof core.buildPayload,'function');
+    const edition = 'a'.repeat(32);
+    assert.deepEqual(core.buildPayload(edition,{N1:5},['N1']),{type:'digest_ratings',edition,ratings:{N1:5}});
+    for (const ratings of [{},null,[],{N1:'5'},{N1:0},{N1:6},{N1:1.5},{N99:3}]) assert.throws(()=>core.buildPayload(edition,ratings,['N1']));
+    assert.throws(()=>core.buildPayload('../x',{N1:5},['N1']));
+    const many = Object.fromEntries(Array.from({length:600},(_,i)=>['N'+(i+1),5]));
+    assert.throws(()=>core.buildPayload(edition,many,Object.keys(many)));
+  });
+  test('состояние: восстановление только допустимых оценок, переключение без мутации', () => {
+    assert.equal(typeof core.restoreDraft, 'function');
+    assert.deepEqual(core.restoreDraft('{"N1":5,"N2":0,"N3":"4","N99":3}', ['N1','N2','N3']), {N1:5});
+    for (const raw of ['oops','null','[]','42']) assert.deepEqual(core.restoreDraft(raw,['N1']),{});
+    const initial = {N1:5};
+    assert.deepEqual(core.toggleRating(initial,'N1',5,['N1','N2']),{});
+    assert.deepEqual(core.toggleRating(initial,'N2',1,['N1','N2']),{N1:5,N2:1});
+    assert.deepEqual(initial,{N1:5});
+    for (const score of [0,6,1.2,'5',NaN]) assert.throws(()=>core.toggleRating(initial,'N1',score,['N1']));
+    assert.throws(()=>core.toggleRating(initial,'N99',5,['N1']));
+  });
+  test('данные: схема, уникальные ID, совпадение выпуска, безопасные ссылки, без лимита 10', () => {
+    assert.equal(typeof core.validateData, 'function');
+    const edition = 'a'.repeat(32);
+    const item = {id:'N1',title:'Синтетический тест',summary:'Только офлайн',url:'https://example.org/test',category:'Тест',top:true};
+    const data = {edition,date:'2026-11-11',items:[item]};
+    assert.deepEqual(core.validateData(data, edition), data);
+    assert.equal(core.validateData({...data,items:[]},edition).items.length,0);
+    assert.equal(core.validateData({...data,items:Array.from({length:13},(_,i)=>({...item,id:'N'+(i+1)}))},edition).items.length,13);
+    for (const bad of [{...data,edition:'b'.repeat(32)}, {...data,items:[item,item]}, {...data,items:[{...item,id:'__proto__'}]}, {...data,items:[{...item,top:1}]}, {...data,items:[{...item,title:null}]}, {...data,items:[{...item,url:'javascript:alert(1)'}]}, {...data,items:[{...item,url:'//example.org'}]}]) assert.throws(()=>core.validateData(bad,edition));
+    assert.equal(core.validateData({...data,items:[{...item,url:'http://example.org'}]},edition).items.length,1);
+  });
+  test('edition: строго 32 строчных hex-символа', () => {
+    assert.equal(typeof core.validEdition, 'function');
+    assert.equal(core.validEdition('a'.repeat(32)), true);
+    for (const value of ['', 'A'.repeat(32), '../x', 'a'.repeat(31), 'a'.repeat(32)+'\n', null, 123]) assert.equal(core.validEdition(value), false);
+  });
+} else if (typeof document !== 'undefined') {
+  const $ = id => document.getElementById(id);
+  const tg = window.Telegram?.WebApp;
+  const params = new URLSearchParams(window.location.search);
+  const edition = params.getAll('e').length === 1 ? params.get('e') : null;
+  const storageKey = 'digest-ratings:v1:' + edition;
+  const labels = ['неинтересно','скорее неинтересно','нейтрально','интересно','очень интересно'];
+  let data = null, ratings = {}, ids = [], sent = false, loading = false;
+  const controls = new Map();
+  const node = (tag, className, text) => {
+    const el = document.createElement(tag);
+    if (className) el.className = className;
+    if (text !== undefined) el.textContent = text;
+    return el;
+  };
+  function hostHint() {
+    const available = core.canSend(tg);
+    $('host-note').hidden = available;
+    $('host-note').textContent = available ? '' : 'Предпросмотр: можно читать и выбирать оценки, но передача недоступна. Откройте выпуск кнопкой клавиатуры в чате бота в обновлённом Telegram.';
+    return available;
+  }
+  function storageWarning() {
+    $('storage-note').hidden = false;
+    $('storage-note').textContent = 'Черновик не удалось сохранить на устройстве. Оценки доступны до закрытия страницы; их всё ещё можно передать боту.';
+  }
+  function persist() {
+    try {
+      window.localStorage.setItem(storageKey, JSON.stringify(ratings));
+      $('storage-note').hidden = true;
+    } catch (_) { storageWarning(); }
+  }
+  function update() {
+    const count = Object.keys(ratings).length;
+    const total = data?.items.length || 0;
+    $('count').textContent = 'Оценено: ' + count + ' из ' + total;
+    $('remaining').textContent = 'Без оценки: ' + (total - count);
+    $('save').disabled = loading || sent || !data || !count || !hostHint();
+    for (const [id, entry] of controls) {
+      entry.buttons.forEach((button, index) => {
+        button.setAttribute('aria-pressed', String(ratings[id] === index + 1));
+        button.disabled = sent;
+      });
+      entry.caption.textContent = ratings[id] ? ratings[id] + ' — ' + labels[ratings[id]-1] : 'Пока без оценки';
+    }
+  }
+  function setState(title, message, retry = false) {
+    $('state').hidden = false;
+    $('state-title').textContent = title;
+    $('state-message').textContent = message;
+    $('retry').hidden = !retry;
+  }
+  function render() {
+    const groups = new Map();
+    data.items.forEach(item => {
+      if (!groups.has(item.category)) groups.set(item.category, []);
+      groups.get(item.category).push(item);
+    });
+    for (const [category, items] of groups) {
+      const section = node('section');
+      const sectionTitle = node('h2','section-title',category + ' / ' + items.length);
+      sectionTitle.id = 'section-' + groups.size + '-' + controls.size;
+      section.setAttribute('aria-labelledby',sectionTitle.id);
+      section.append(sectionTitle);
+      for (const item of items) {
+        const article = node('article','article');
+        const meta = node('div','article-meta');
+        meta.append(node('span','',item.id));
+        if (item.top) meta.append(node('span','badge','ТОП-3'));
+        const title = node('h3','',item.title);
+        title.id = 'title-' + item.id;
+        article.setAttribute('aria-labelledby',title.id);
+        const source = node('a','source',new URL(item.url).hostname + ' ↗');
+        source.href = item.url;
+        source.target = '_blank';
+        source.rel = 'noopener noreferrer';
+        source.setAttribute('aria-label','Источник новости: ' + item.title);
+        const label = node('p','rating-label','Насколько вам интересно?');
+        label.id = 'rating-' + item.id;
+        const group = node('div','rating');
+        group.setAttribute('role','group');
+        group.setAttribute('aria-labelledby',label.id + ' ' + title.id);
+        const buttons = labels.map((label, index) => {
+          const button = node('button','score',String(index + 1));
+          button.type = 'button';
+          button.setAttribute('aria-label',(index + 1) + ' — ' + label);
+          button.addEventListener('click',() => {
+            if (sent) return;
+            ratings = core.toggleRating(ratings,item.id,index + 1,ids);
+            $('send-status').textContent = '';
+            persist();
+            update();
+          });
+          group.append(button);
+          return button;
+        });
+        const scale = node('div','scale');
+        scale.append(node('span','','1 — неинтересно'),node('span','','5 — очень интересно'));
+        const caption = node('p','selection');
+        controls.set(item.id,{buttons,caption});
+        article.append(meta,title,node('p','summary',item.summary),source,label,group,scale,caption);
+        section.append(article);
+      }
+      $('news').append(section);
+    }
+  }
+  async function load() {
+    if (loading) return;
+    if (!core.validEdition(edition)) {
+      $('edition-meta').textContent = 'Выпуск не выбран';
+      $('news').setAttribute('aria-busy','false');
+      setState('Неверная ссылка','Откройте выпуск кнопкой клавиатуры в чате бота. В ссылке должен быть корректный идентификатор выпуска.');
+      return;
+    }
+    loading = true;
+    data = null;
+    ratings = {};
+    controls.clear();
+    $('news').replaceChildren();
+    $('news').setAttribute('aria-busy','true');
+    $('edition-meta').textContent = 'Загружаем выпуск…';
+    setState('Загрузка','Получаем новости выпуска…');
+    update();
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(),15000);
+    try {
+      const response = await fetch('./editions/' + edition + '.json',{cache:'no-store',signal:controller.signal});
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      data = core.validateData(await response.json(),edition);
+      ids = data.items.map(item => item.id);
+      try { ratings = core.restoreDraft(window.localStorage.getItem(storageKey),ids); }
+      catch (_) { storageWarning(); }
+      $('edition-meta').textContent = 'Выпуск: ' + data.date + ' · Новостей: ' + data.items.length;
+      if (data.items.length) {
+        $('state').hidden = true;
+        render();
+      } else {
+        setState('В выпуске пока нет новостей','Здесь появятся новости этого выпуска. Сейчас оценивать нечего.');
+      }
+    } catch (_) {
+      data = null;
+      $('edition-meta').textContent = 'Выпуск недоступен';
+      setState('Не удалось загрузить выпуск','Проверьте подключение и попробуйте снова. Если ошибка повторяется, вернитесь в чат и откройте выпуск заново.',true);
+    } finally {
+      clearTimeout(timer);
+      loading = false;
+      $('news').setAttribute('aria-busy','false');
+      update();
+    }
+  }
+  $('retry').addEventListener('click',load);
+  $('save').addEventListener('click',() => {
+    if (sent || loading || !data || !core.canSend(tg)) return;
+    try {
+      const payload = core.buildPayload(edition,ratings,ids);
+      // sendData closes the Mini App; only the bot can confirm receipt/persistence.
+      tg.sendData(JSON.stringify(payload));
+      sent = true;
+      $('save').textContent = 'Передача вызвана';
+      $('send-status').textContent = 'Оценки переданы Telegram для отправки. Дождитесь подтверждения бота в чате; здесь получение не проверяется.';
+      update();
+    } catch (error) {
+      $('send-status').textContent = error instanceof Error && error.message.startsWith('Слишком много') ? error.message : 'Не удалось вызвать передачу. Черновик оставлен на устройстве. Откройте приложение кнопкой клавиатуры бота и попробуйте снова.';
+    }
+  });
+  hostHint();
+  if (tg && tg.platform !== 'unknown') {
+    try { tg.ready(); tg.expand(); } catch (_) { /* Preview remains usable if SDK setup fails. */ }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(() => {
+      document.querySelector('.shell').style.paddingBottom = (document.querySelector('.dock').getBoundingClientRect().height + 30) + 'px';
+    }).observe(document.querySelector('.dock'));
+  }
+  load();
+}
+})();
+</script>
+</body></html>
