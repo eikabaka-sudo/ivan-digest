@@ -1,13 +1,12 @@
 {
-  "edition": "73bb6dd497804834936ed84d5baee1d5",
   "date": "2026-11-21",
+  "edition": "73bb6dd497804834936ed84d5baee1d5",
   "kind": "hockey",
   "ratings": false,
-  "title": "🚨 Голы и передачи",
   "sections": [
     {
       "heading": "Матч",
-      "text": "**Verifying Game Data**\n\nI've successfully retrieved all necessary data from both provided KHL links. My current focus is on meticulously cross-referencing every numerical detail from these sources to ensure absolute accuracy.\n\n**Confirming Match Details**\n\nI'm meticulously comparing the game status and period scores against the detailed goal and assist information. This allows me to confirm the flow of the match and the individual contributions.\n\n**Validating Shot Totals**\n\nI'm cross-referencing the shot statistics, comparing \"total shots\" from Sportbox with the \"shots on goal\" data broken down by period. My aim is to reconcile these figures and identify any discrepancies.\n\n**Reconciling Data Points**\n\nI'm diligently comparing the penalty minutes and face-off win percentages, noting the slight differences in physical engagement metrics like hits and blocked shots. I'm also analyzing the possession data, focusing on attack zone time discrepancies.\n\n**Analyzing Goalie Performance**\n\nI'm now focused on the goaltenders' statistics, comparing save percentages and goals against averages for both teams. This will help me understand their individual performances during the game.\n\n**Verifying Final Score**\n\nI've identified a discrepancy between the Sportbox and the provided goal information regarding the final score. I'm currently reconciling the last goal to ensure the reported score accurately reflects the data.\n\n**Validating Player Stats**\n\nI'm now scrutinizing individual player statistics, focusing on a specific player's goal, assist, and point totals to ensure they align with the overall game data. I'm also checking their +/- rating, penalty minutes, and shot efficiency.\n\n🏒 **Отчёт по матчу КХЛ: ХК «Сочи» — СКА (21.11.2026)**\n\nМатч регулярного чемпионата КХЛ в ДС «Большой» (Сириус) **завершён**. СКА одержал выездную победу.\n\n* **Итоговый счёт:** **2:5** (по периодам: **0:1, 1:3, 1:1**)\n\n\n* **02:02 — 0:1 (СКА, рав.):** Василий Атанасов (10) — ассистенты: Владислав Романов (6), Никита Зайцев (2)\n* **24:21 — 0:2 (СКА, рав.):** Николай Голдобин (4) — ассистент: Рокко Гримальди (4)\n* **32:04 — 0:3 (СКА, рав.):** Егор Савиков (3) — ассистенты: Матвей Короткий (12), Владислав Романов (7)\n* **35:52 — 0:4 (СКА, рав.):** Николай Голдобин (5) — ассистенты: Скотт Уилсон (3), Алексей Маклюков (6)\n* **38:40 — 1:4 (Сочи, рав.):** Егор Петухов (3) — ассистенты: Кэмерон Ли (1), Максим Коростелёв (2)\n* **48:37 — 2:4 (Сочи, бол.):** Егор Петухов (4) — ассистенты: Дмитрий Кагарлицкий (3), Никита Гусев (16)\n* **54:20 — 2:5 (СКА, рав.):** **Василий Глотов (8)** — ассистенты: Юрий Журавлёв (3), Рокко Гримальди (5)"
+      "text": "🏒 **Отчёт по матчу КХЛ: ХК «Сочи» — СКА (21.11.2026)**\n\nМатч регулярного чемпионата КХЛ в ДС «Большой» (Сириус) **завершён**. СКА одержал выездную победу.\n\n* **Итоговый счёт:** **2:5** (по периодам: **0:1, 1:3, 1:1**)\n\n\n* **02:02 — 0:1 (СКА, рав.):** Василий Атанасов (10) — ассистенты: Владислав Романов (6), Никита Зайцев (2)\n* **24:21 — 0:2 (СКА, рав.):** Николай Голдобин (4) — ассистент: Рокко Гримальди (4)\n* **32:04 — 0:3 (СКА, рав.):** Егор Савиков (3) — ассистенты: Матвей Короткий (12), Владислав Романов (7)\n* **35:52 — 0:4 (СКА, рав.):** Николай Голдобин (5) — ассистенты: Скотт Уилсон (3), Алексей Маклюков (6)\n* **38:40 — 1:4 (Сочи, рав.):** Егор Петухов (3) — ассистенты: Кэмерон Ли (1), Максим Коростелёв (2)\n* **48:37 — 2:4 (Сочи, бол.):** Егор Петухов (4) — ассистенты: Дмитрий Кагарлицкий (3), Никита Гусев (16)\n* **54:20 — 2:5 (СКА, рав.):** **Василий Глотов (8)** — ассистенты: Юрий Журавлёв (3), Рокко Гримальди (5)"
     },
     {
       "heading": "📊 Командная статистика («Сочи» — СКА)",
@@ -35,5 +34,6 @@
       "title": "Источник",
       "url": "https://news.sportbox.ru/Vidy_sporta/Hokkej/KHL/stats/turnir_23952/game_1380959005"
     }
-  ]
+  ],
+  "title": "🚨 Голы и передачи"
 }
